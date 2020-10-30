@@ -6,6 +6,11 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    
     defaultConfig {
         applicationId "com.example.testapp"
         minSdkVersion 21
@@ -43,6 +48,7 @@ dependencies {
 
     //livedata
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
+    //implementation "android.arch.lifecycle:extensions:1.1.1"
 
     // RecycleView
     implementation "androidx.recyclerview:recyclerview:1.1.0"
