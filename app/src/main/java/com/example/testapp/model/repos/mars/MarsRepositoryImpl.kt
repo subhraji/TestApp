@@ -9,8 +9,8 @@ class MarsRepositoryImpl : MarsRepository {
 
     private val apiService = ApiClient.getInstance()
 
-    override suspend fun getMarsProperty(): Outcome<MarsProperty> {
-        val apiResponse = MutableLiveData<Outcome<MarsProperty>>()
+    override suspend fun getMarsProperty(): Outcome<List<MarsProperty>> {
+        val apiResponse = MutableLiveData<Outcome<List<MarsProperty>>>()
         try {
             val response = apiService.getMarsProperties()
             apiResponse.value = Outcome.success(response)
@@ -18,7 +18,7 @@ class MarsRepositoryImpl : MarsRepository {
             apiResponse.value = Outcome.failure(e)
         }
 
-        return apiResponse.value as Outcome<MarsProperty>
+        return apiResponse.value as Outcome<List<MarsProperty>>
     }
 
 }

@@ -6,5 +6,5 @@ import retrofit2.http.GET
 interface ApiInterface {
 
     @GET("realestate")
-    suspend fun getMarsProperties(): MarsProperty
+    suspend fun getMarsProperties(): List<MarsProperty>
 }

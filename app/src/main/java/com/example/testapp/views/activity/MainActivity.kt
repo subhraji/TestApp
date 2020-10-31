@@ -2,6 +2,7 @@ package com.example.testapp.views.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import com.example.testapp.R
@@ -27,12 +28,14 @@ class MainActivity : AppCompatActivity() {
             when (outcome) {
                 is Outcome.Success -> {
                     val marsProperty = outcome.data
-                    if (marsProperty.id!=null) {
-                        fillRecyclerView()
+
+                    if (marsProperty.size != 0){
+                        fillRecyclerView(marsProperty)
                     }
+
                 }
                 is Outcome.Failure -> {
-                    Toast.makeText(this,"Error Occurred",Toast.LENGTH_SHORT).show()
+                    Log.i("Error",outcome.e.message.toString())
                     outcome.e.printStackTrace()
                 }
             }
