@@ -10,6 +10,8 @@ import com.example.testapp.model.pojo.mars_property.MarsProperty
 import com.example.testapp.model.repos.Outcome
 import com.example.testapp.viewmodel.MarsViewModel
 import com.example.testapp.views.adapter.MarsPropertiesAdapter
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.messaging.FirebaseMessaging
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
