@@ -6,6 +6,7 @@ import android.view.Menu
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.SearchView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.MenuItemCompat
 import androidx.lifecycle.Observer
@@ -61,16 +62,19 @@ class MainActivity : AppCompatActivity() {
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
 
             override fun onQueryTextChange(newText: String): Boolean {
+                adapter?.getFilter()?.filter(newText);
+                Toast.makeText(this@MainActivity, "No Match found", Toast.LENGTH_LONG).show()
                 return false
             }
 
             override fun onQueryTextSubmit(query: String): Boolean {
                 // task HERE
+                searchView.clearFocus();
                 return false
             }
 
         })
-        return true
+        return super.onCreateOptionsMenu(menu);
     }
 
     private fun getMarsProperty(){
