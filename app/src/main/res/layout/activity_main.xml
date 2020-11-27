@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.activity.MainActivity">
+    tools:context=".views.activity.MainActivity"
+    android:orientation="vertical">
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/mars_property_recyclerview"
@@ -15,4 +22,4 @@
         tools:itemCount="3"
         tools:listitem="@layout/mars_property_layout"/>
 
-</RelativeLayout>
+</LinearLayout>
